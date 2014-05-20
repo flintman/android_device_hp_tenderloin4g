@@ -41,8 +41,8 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DICS_CAMERA_BLOB -DQCOM_BSP
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_ath6kl
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_ath6kl
 BOARD_WLAN_DEVICE                := ath6kl
 
 TARGET_BOOTANIMATION_USE_RGB565 := true
@@ -59,6 +59,14 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_HCI := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/hp/tenderloin/bluetooth
 BLUETOOTH_HCIATTACH_USING_PROPERTY = true
+
+# MBM support
+BOARD_USES_MBM_GPS := true
+BOARD_GPS_LIBRARIES := gps.$(TARGET_BOOTLOADER_BOARD_NAME)
+USE_QEMU_GPS_HARDWARE := false
+
+# Needed for blobs
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Define egl.cfg location
 BOARD_EGL_CFG := device/hp/tenderloin/egl.cfg
@@ -119,7 +127,8 @@ TARGET_PREBUILT_KERNEL := device/hp/tenderloin/prebuilt/boot/kernel
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/hp/tenderloin
-TARGET_KERNEL_CONFIG := tenderloin_android_defconfig
+TARGET_KERNEL_CONFIG := tenderloin4g_android_defconfig
+
 TARGET_RECOVERY_INITRC := device/hp/tenderloin/recovery/init.rc
 BOARD_USES_ALT_KMSG_LOCATION := "/proc/last_klog"
 
