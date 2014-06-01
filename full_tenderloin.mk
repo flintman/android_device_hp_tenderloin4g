@@ -23,44 +23,44 @@ $(call inherit-product-if-exists, vendor/hp/tenderloin/tenderloin-vendor.mk)
 # application settings that are stored in resourced.
 
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/init.tenderloin.rc:root/init.tenderloin.rc \
-    device/hp/tenderloin/fstab.tenderloin:root/fstab.tenderloin
+    device/hp/tenderloin4g/init.tenderloin.rc:root/init.tenderloin.rc \
+    device/hp/tenderloin4g/fstab.tenderloin:root/fstab.tenderloin
 
-DEVICE_PACKAGE_OVERLAYS += device/hp/tenderloin/overlay
+DEVICE_PACKAGE_OVERLAYS += device/hp/tenderloin4g/overlay
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/recovery/sbin/ts_srv:recovery/root/sbin/ts_srv \
-	device/hp/tenderloin/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
+    device/hp/tenderloin4g/recovery/sbin/ts_srv:recovery/root/sbin/ts_srv \
+	device/hp/tenderloin4g/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Custom init files.
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/init.tenderloin.usb.rc:root/init.tenderloin.usb.rc \
-    device/hp/tenderloin/ueventd.tenderloin.rc:root/ueventd.tenderloin.rc
+    device/hp/tenderloin4g/init.tenderloin.usb.rc:root/init.tenderloin.usb.rc \
+    device/hp/tenderloin4g/ueventd.tenderloin.rc:root/ueventd.tenderloin.rc
 
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/prebuilt/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/hp/tenderloin/prebuilt/lvm/lvm.conf:root/lvm/lvm.conf \
-    device/hp/tenderloin/makemulti.sh:makemulti.sh \
-    device/hp/tenderloin/prebuilt/boot/moboot.splash.Evervolv.tga:moboot.splash.Evervolv.tga \
-    device/hp/tenderloin/prebuilt/boot/moboot.default:moboot.default
+    device/hp/tenderloin4g/prebuilt/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    device/hp/tenderloin4g/prebuilt/lvm/lvm.conf:root/lvm/lvm.conf \
+    device/hp/tenderloin4g/makemulti.sh:makemulti.sh \
+    device/hp/tenderloin4g/prebuilt/boot/moboot.splash.Evervolv.tga:moboot.splash.Evervolv.tga \
+    device/hp/tenderloin4g/prebuilt/boot/moboot.default:moboot.default
 
 # Add touchcreen configuration file
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/HPTouchpad.idc:system/usr/idc/HPTouchpad.idc
+    device/hp/tenderloin4g/HPTouchpad.idc:system/usr/idc/HPTouchpad.idc
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin//bluetooth/bt_vendor.conf:/system/etc/bluetooth/bt_vendor.conf \
-    device/hp/tenderloin//bluetooth/bluecore6.psr:/system/etc/bluetooth/bluecore6.psr
+    device/hp/tenderloin4g/bluetooth/bt_vendor.conf:/system/etc/bluetooth/bt_vendor.conf \
+    device/hp/tenderloin4g/bluetooth/bluecore6.psr:/system/etc/bluetooth/bluecore6.psr
 
 # Dualboot Magic
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/moboot_control.sh:system/bin/moboot_control.sh
+    device/hp/tenderloin4g/moboot_control.sh:system/bin/moboot_control.sh
 
 # media minor check boot script
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/prebuilt/etc/init.d/10check_media_minor:system/etc/init.d/10check_media_minor
+    device/hp/tenderloin4g/prebuilt/etc/init.d/10check_media_minor:system/etc/init.d/10check_media_minor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
@@ -77,45 +77,45 @@ PRODUCT_COPY_FILES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/prebuilt/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
-    device/hp/tenderloin/prebuilt/usr/keylayout/pmic8058_pwrkey.kl:system/usr/keylayout/pmic8058_pwrkey.kl
+    device/hp/tenderloin4g/prebuilt/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
+    device/hp/tenderloin4g/prebuilt/usr/keylayout/pmic8058_pwrkey.kl:system/usr/keylayout/pmic8058_pwrkey.kl
 
 #Wifi Firmware
 # from kernel.org
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.0/data.patch.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/data.patch.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/bdata.SD31.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.0/athwlan.bin.z77:/system/etc/firmware/ath6k/AR6003/hw2.0/athwlan.bin.z77 \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.0/bdata.WB31.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/bdata.WB31.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.0/otp.bin.z77:/system/etc/firmware/ath6k/AR6003/hw2.0/otp.bin.z77 \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.0/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/bdata.SD32.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/endpointping.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/endpointping.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/data.patch.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/data.patch.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.SD31.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.SD31.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.WB31.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.WB31.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/athwlan.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/athwlan.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.SD32.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/otp.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/otp.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/fw-3.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/fw-3.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw1.0/data.patch.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/data.patch.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw1.0/bdata.SD31.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/bdata.SD31.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw1.0/athwlan.bin.z77:/system/etc/firmware/ath6k/AR6003/hw1.0/athwlan.bin.z77 \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw1.0/bdata.WB31.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/bdata.WB31.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw1.0/otp.bin.z77:/system/etc/firmware/ath6k/AR6003/hw1.0/otp.bin.z77 \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw1.0/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/bdata.SD32.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6002/eeprom.data:/system/etc/firmware/ath6k/AR6002/eeprom.data \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6002/data.patch.hw2_0.bin:/system/etc/firmware/ath6k/AR6002/data.patch.hw2_0.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6002/athwlan.bin.z77:/system/etc/firmware/ath6k/AR6002/athwlan.bin.z77 \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6002/eeprom.bin:/system/etc/firmware/ath6k/AR6002/eeprom.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/LICENSE.atheros_firmware:/system/etc/firmware/ath6k/LICENSE.atheros_firmware \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.0/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/bdata.CUSTOM.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.CUSTOM.bin \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw1.0/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/bdata.CUSTOM.bin
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.0/data.patch.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/data.patch.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/bdata.SD31.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.0/athwlan.bin.z77:/system/etc/firmware/ath6k/AR6003/hw2.0/athwlan.bin.z77 \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.0/bdata.WB31.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/bdata.WB31.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.0/otp.bin.z77:/system/etc/firmware/ath6k/AR6003/hw2.0/otp.bin.z77 \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.0/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/bdata.SD32.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/endpointping.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/endpointping.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/data.patch.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/data.patch.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.SD31.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.SD31.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.WB31.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.WB31.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/athwlan.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/athwlan.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.SD32.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/otp.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/otp.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/fw-3.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/fw-3.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw1.0/data.patch.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/data.patch.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw1.0/bdata.SD31.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/bdata.SD31.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw1.0/athwlan.bin.z77:/system/etc/firmware/ath6k/AR6003/hw1.0/athwlan.bin.z77 \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw1.0/bdata.WB31.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/bdata.WB31.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw1.0/otp.bin.z77:/system/etc/firmware/ath6k/AR6003/hw1.0/otp.bin.z77 \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw1.0/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/bdata.SD32.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6002/eeprom.data:/system/etc/firmware/ath6k/AR6002/eeprom.data \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6002/data.patch.hw2_0.bin:/system/etc/firmware/ath6k/AR6002/data.patch.hw2_0.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6002/athwlan.bin.z77:/system/etc/firmware/ath6k/AR6002/athwlan.bin.z77 \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6002/eeprom.bin:/system/etc/firmware/ath6k/AR6002/eeprom.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/LICENSE.atheros_firmware:/system/etc/firmware/ath6k/LICENSE.atheros_firmware \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.0/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.0/bdata.CUSTOM.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.CUSTOM.bin \
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw1.0/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw1.0/bdata.CUSTOM.bin
 
 # Wifi Firmware
 # Temporary hack for ATH6KL
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.bin
+    device/hp/tenderloin4g/prebuilt/wifi/ath6k/AR6003/hw2.1.1/bdata.SD32.bin:/system/etc/firmware/ath6k/AR6003/hw2.1.1/bdata.bin
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -159,13 +159,13 @@ PRODUCT_PACKAGES += \
 
 # Audio xml Files
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/configs/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/hp/tenderloin/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    device/hp/tenderloin/configs/media_codecs.xml:system/etc/media_codecs.xml 
+    device/hp/tenderloin4g/configs/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/hp/tenderloin4g/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    device/hp/tenderloin4g/configs/media_codecs.xml:system/etc/media_codecs.xml 
 
 # Audio Policy Configuration
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/configs/audio_policy.conf:system/etc/audio_policy.conf
+    device/hp/tenderloin4g/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Sensors, misc
 PRODUCT_PACKAGES += \
@@ -192,10 +192,10 @@ PRODUCT_PACKAGES += \
     Mms
 
 PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/aldtf.sh:system/xbin/aldtf.sh \
-    device/hp/tenderloin/xmesg:system/bin/xmesg \
-    device/hp/tenderloin/pollerr.sh:system/bin/pollerr.sh \
-    device/hp/tenderloin/gps.conf:system/etc/gps.conf
+    device/hp/tenderloin4g/aldtf.sh:system/xbin/aldtf.sh \
+    device/hp/tenderloin4g/xmesg:system/bin/xmesg \
+    device/hp/tenderloin4g/pollerr.sh:system/bin/pollerr.sh \
+    device/hp/tenderloin4g/gps.conf:system/etc/gps.conf
 
 PRODUCT_PACKAGES += \
 	make_ext4fs

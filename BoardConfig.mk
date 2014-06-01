@@ -1,7 +1,7 @@
 # inherit from the proprietary version
 -include vendor/hp/tenderloin/BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/hp/tenderloin/include 
+TARGET_SPECIFIC_HEADER_PATH := device/hp/tenderloin4g/include 
 
 # We have so much memory 3:1 split is detrimental to us.
 TARGET_USES_2G_VM_SPLIT := true
@@ -25,13 +25,14 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_DISABLE_ARM_PIE := true
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+TARGET_OTA_ASSERT_DEVICE := tenderloin
 
 TARGET_NO_RADIOIMAGE := true
 TARGET_HAVE_TSLIB := false
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
-TARGET_RECOVERY_FSTAB := device/hp/tenderloin/fstab.tenderloin
+TARGET_RECOVERY_FSTAB := device/hp/tenderloin4g/fstab.tenderloin
 RECOVERY_FSTAB_VERSION := 2
 
 # QCOM BSP Enabled
@@ -57,7 +58,7 @@ COMMON_GLOBAL_CFLAGS += -DHTC_ACOUSTIC_AUDIO -DLEGACY_QCOM_VOICE
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_HCI := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/hp/tenderloin/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/hp/tenderloin4g/bluetooth
 BLUETOOTH_HCIATTACH_USING_PROPERTY = true
 
 # MBM support
@@ -69,7 +70,7 @@ USE_QEMU_GPS_HARDWARE := false
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Define egl.cfg location
-BOARD_EGL_CFG := device/hp/tenderloin/egl.cfg
+BOARD_EGL_CFG := device/hp/tenderloin4g/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
@@ -113,8 +114,8 @@ TARGET_KERNEL_NO_MODULES := true
 BOARD_NEEDS_CUTILS_LOG := true
 
 TARGET_PROVIDES_RELEASETOOLS := true
-TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := device/hp/tenderloin/releasetools/tenderloin_img_from_target_files
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/hp/tenderloin/releasetools/tenderloin_ota_from_target_files
+TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := device/hp/tenderloin4g/releasetools/tenderloin_img_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/hp/tenderloin4g/releasetools/tenderloin_ota_from_target_files
 
 BOARD_USES_UBOOT := true
 BOARD_USES_UBOOT_MULTIIMAGE := true
@@ -123,13 +124,13 @@ BOARD_USES_UBOOT_MULTIIMAGE := true
 BOARD_USES_CUSTOM_FSCK_MSDOS := true
 
 # Define Prebuilt kernel locations
-TARGET_PREBUILT_KERNEL := device/hp/tenderloin/prebuilt/boot/kernel
+TARGET_PREBUILT_KERNEL := device/hp/tenderloin4g/prebuilt/boot/kernel
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/hp/tenderloin
 TARGET_KERNEL_CONFIG := tenderloin4g_android_defconfig
 
-TARGET_RECOVERY_INITRC := device/hp/tenderloin/recovery/init.rc
+TARGET_RECOVERY_INITRC := device/hp/tenderloin4g/recovery/init.rc
 BOARD_USES_ALT_KMSG_LOCATION := "/proc/last_klog"
 
 # tenderloin - these partition sizes are temporary to complete build
@@ -149,8 +150,8 @@ BOARD_HAS_SDCARD_INTERNAL := false
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_GRAPHICS:= ../../../device/hp/tenderloin/graphics.c
-BOARD_CUSTOM_BOOTIMG_MK := device/hp/tenderloin/uboot-bootimg.mk
+BOARD_CUSTOM_GRAPHICS:= ../../../device/hp/tenderloin4g/graphics.c
+BOARD_CUSTOM_BOOTIMG_MK := device/hp/tenderloin4g/uboot-bootimg.mk
 
 # Multiboot stuff
 TARGET_RECOVERY_PRE_COMMAND := "/system/bin/rebootcmd"
@@ -173,7 +174,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-        device/hp/tenderloin/sepolicy
+        device/hp/tenderloin4g/sepolicy
 
 BOARD_SEPOLICY_UNION += \
         healthd.te
