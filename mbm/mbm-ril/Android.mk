@@ -10,7 +10,7 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-API_SUPPORTED:= 19
+API_SUPPORTED:= 21
 
 # Check if supported
 ifeq "$(findstring $(PLATFORM_SDK_VERSION),$(API_SUPPORTED))" ""
@@ -57,7 +57,6 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_CFLAGS := -D_GNU_SOURCE
 
 LOCAL_C_INCLUDES := $(KERNEL_HEADERS) $(TOP)/hardware/ril/libril/
-
 # Disable prelink, or add to build/core/prelink-linux-arm.map
 LOCAL_PRELINK_MODULE := false
 
@@ -66,8 +65,8 @@ LOCAL_MODULE_TAGS := optional
 # Build shared library
 LOCAL_SHARED_LIBRARIES += \
     libcutils libutils
-LOCAL_LDLIBS += -lpthread
-LOCAL_LDLIBS += -lrt
+#LOCAL_LDLIBS += -lpthread
+#LOCAL_LDLIBS += -lrt
 LOCAL_CFLAGS += -DRIL_SHLIB
 LOCAL_CFLAGS += -Wall
 LOCAL_MODULE:= libmbm-ril

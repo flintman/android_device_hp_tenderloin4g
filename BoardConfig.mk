@@ -18,7 +18,7 @@ BOARD_RIL_NO_CELLINFOLIST := true
 # Needed for blobs
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
-TARGET_RECOVERY_FSTAB := device/hp/tenderloin/fstab.tenderloin
+TARGET_RECOVERY_FSTAB := device/hp/tenderloin4g/fstab.tenderloin
 
 # Define Prebuilt kernel locations
 TARGET_PREBUILT_KERNEL := device/hp/tenderloin-common/prebuilt/boot/kernel
